@@ -1,4 +1,6 @@
 
+using URLShortenerMicroservice.Service;
+
 namespace URLShortenerMicroservice
 {
     public class Program
@@ -10,6 +12,8 @@ namespace URLShortenerMicroservice
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddSingleton<IUrlShortnerService, URLShortnerService>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
